@@ -11,8 +11,8 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: -2
+        // Expected Result: 10
         Console.WriteLine("Test 1");
 
         // Defect(s) Found: 
@@ -20,8 +20,27 @@ public class CustomerService {
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Add new customer
+        // Expected Result: Have it at the end of the queue
+        Console.WriteLine("Test 2");
+
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
+
+        // Test 3
+        // Scenario: Queue is full and we try to add another customer
+        // Expected Result: Error
+        Console.WriteLine("Test 2");
+
+        // Test 4
+        // Scenario: Customer is served
+        // Expected Result: Display customer details and dequeue it
+        Console.WriteLine("Test 2");
+
+        // Test 5
+        // Scenario: Queue is empty and we try to serve a customer
+        // Expected Result: Error
         Console.WriteLine("Test 2");
 
         // Defect(s) Found: 
