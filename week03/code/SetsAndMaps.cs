@@ -184,9 +184,9 @@ public static class SetsAndMaps
 
         foreach (var Feature in featureCollection.Features)
         {
-            float magnitude = Feature.Properties.Magnitude;
+            float mag = Feature.Properties.Mag;
             string place = Feature.Properties.Place;
-            string earthquake = $"Place: {place}\tMagnitude: {magnitude}\n";
+            string earthquake = $"Place {place} - Mag {mag}";
             earthquakes.Add(earthquake);
         }
 
