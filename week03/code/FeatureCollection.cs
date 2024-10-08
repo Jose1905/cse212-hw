@@ -1,66 +1,60 @@
-using System.Text.Json;
-
 public class FeatureCollection
 {
-    private string _json;
-    private JsonSerializerOptions _options;
-
-    public FeatureCollection(string json, JsonSerializerOptions options)
-    {
-        _json = json;
-        _options = options;
-    }
-
-    public string GetJson()
-    {
-        return _json;
-    }
-
-    public void SetJson(string json)
-    {
-        _json = json;
-    }
-
-    public JsonSerializerOptions GetOptions()
-    {
-        return _options;
-    }
-
-    public void SetOptions(JsonSerializerOptions options)
-    {
-        _options = options;
-    }
+    public string Type {get; set; }
+    public Metadata Metadata {get; set; } 
+    public Feature[] Features {get; set; }
+    public float[] Bbox {get; set; }
 }
 
-public class Earthquake
+class Metadata{
+    public long Generated {get; set; }
+    public string Url {get; set; }
+    public string Title {get; set; }
+    public int Status {get; set; }
+    public string Api {get; set; }
+    public int Count {get; set; }
+}
+
+class Feature
 {
-    private string _place;
-    private float _magnitude;
+    public string Type {get; set; }
+    public Properties Properties {get; set; }
+    public Geometry Geometry {get; set; }
+    public string Id {get; set; }
+}
 
-    public Earthquake(string place, float magnitude)
-    {
-        string _place = place;
-        float _magnitude = magnitude;
-    }
+class Properties
+{
+    public float Magnitude {get; set; }
+    public string Place {get; set; }
+    public long Time {get; set; }
+    public long Updated {get; set; }
+    public bool? Tz {get; set; }
+    public string Url {get; set; }
+    public string Detail {get; set; }
+    public bool? Felt {get; set; }
+    public bool? Cdi {get; set; }
+    public bool? Mmi {get; set; }
+    public bool? Alert {get; set; }
+    public string Status {get; set; }
+    public int Tsunami {get; set; }
+    public int Sig {get; set; }
+    public string Net {get; set; }
+    public string Code {get; set; }
+    public string Ids {get; set; }
+    public string Sources {get; set; }
+    public string Types {get; set; }
+    public int Nst {get; set; }
+    public double Dmin {get; set; }
+    public float Rms {get; set; }
+    public int Gap {get; set; }
+    public string MagType {get; set; }
+    public string Type {get; set; }
+    public string Title {get; set; }
+}
 
-    public string GetPlace()
-    {
-        return _place;
-    }
-
-    public void SetPlace(string place)
-    {
-        _place = place;
-    }
-
-    public float GetMagnitude()
-    {
-        return _magnitude;
-    }
-
-    public void SetMagnitude(float magnitude)
-    {
-        _magnitude = magnitude;
-    }
-
+class Geometry
+{
+    public string Type {get; set; }
+    public double[] coordinates {get; set; }
 }

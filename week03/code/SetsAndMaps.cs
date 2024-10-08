@@ -180,8 +180,16 @@ public static class SetsAndMaps
         // 2. Add code below to create a string out each place a earthquake has happened today and its magitude.
         // 3. Return an array of these string descriptions.
 
-        
+        List<string> earthquakes = [];
 
-        return [];
+        foreach (var Feature in featureCollection.Features)
+        {
+            float magnitude = Feature.Properties.Magnitude;
+            string place = Feature.Properties.Place;
+            string earthquake = $"Place: {place}\tMagnitude: {magnitude}\n";
+            earthquakes.Add(earthquake);
+        }
+
+        return [.. earthquakes];
     }
 }
